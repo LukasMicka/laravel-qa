@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "app\\Http"
+		},
+		{
+			"path": "routes"
+		},
+		{
+			"path": "resources\\views"
+		}
+	],
+	"settings": {}
+}
