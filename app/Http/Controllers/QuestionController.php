@@ -3,23 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use App;
 
 class QuestionController extends Controller
 {
     //
     public function index()
     {
-        $all_questions = DB::table("questions")->orderBy("created_at", "desc")->get();
+        $all_questions = \App\Question::orderBy("created_at", "desc")->get();
 
         dd($all_questions);
     }
     public function show()
     {
-        $question = DB::table("questions")->where('id', 1)->first();
+        $question = \App\Question::where('id', 1)->first();
         
-        $answers_to_q_1 = DB::table("answers")->where('question_id', 1)->oldest()->get();
-    
+        $answers_to_q_1 = \App\Answer::where('question_id', 1)->oldest()->get();
+
+        $answers_to_q_1 = $question->answers()->oldest()->get();
+        
         dd($answers_to_q_1);
     }
 }
