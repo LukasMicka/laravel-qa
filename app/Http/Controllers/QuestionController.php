@@ -12,8 +12,11 @@ class QuestionController extends Controller
     {
         $all_questions = \App\Question::orderBy("created_at", "desc")->get();
 
-        dd($all_questions);
+        $view = view("questions/index");
+
+        return $view;
     }
+
     public function show()
     {
         $question = \App\Question::where('id', 1)->first();
@@ -21,7 +24,9 @@ class QuestionController extends Controller
         $answers_to_q_1 = \App\Answer::where('question_id', 1)->oldest()->get();
 
         $answers_to_q_1 = $question->answers()->oldest()->get();
-        
-        dd($answers_to_q_1);
+
+        $view = view("questions/show");
+
+        return $view;
     }
 }
