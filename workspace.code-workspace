@@ -4,13 +4,13 @@
 			"path": "."
 		},
 		{
-			"path": "app\\Http"
-		},
-		{
 			"path": "routes"
 		},
 		{
 			"path": "resources\\views"
+		},
+		{
+			"path": "app"
 		}
 	],
 	"settings": {}
